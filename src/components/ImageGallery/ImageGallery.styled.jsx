@@ -12,3 +12,10 @@ export const Gallery = styled.ul`
   margin-left: auto;
   margin-right: auto;
 `;
+
+export const ErrorMessage = styled.p`
+  margin-top: 30px;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 600;
+`;
