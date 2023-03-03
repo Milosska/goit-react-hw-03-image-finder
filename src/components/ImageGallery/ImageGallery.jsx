@@ -47,15 +47,24 @@ export class ImageGallery extends Component {
           isMore: data.hits.length === 12,
         });
 
+        const images = data.hits.map(
+          ({ id, webformatURL, largeImageURL, tags }) => ({
+            id,
+            webformatURL,
+            largeImageURL,
+            tags,
+          })
+        );
+
         // Перевірка на новий запит
         if (prevProps.query !== query) {
           toast.success(`We found ${data.totalHits} images`);
           this.setState({
-            images: [...data.hits],
+            images: [...images],
           });
         } else {
           this.setState({
-            images: [...prevState.images, ...data.hits],
+            images: [...prevState.images, ...images],
           });
         }
 
@@ -104,4 +113,5 @@ export class ImageGallery extends Component {
 ImageGallery.propTypes = {
   query: PropTypes.string.isRequired,
   page: PropTypes.number.isRequired,
+  handleCilck: PropTypes.func.isRequired,
 };
