@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const LoadBtn = styled.button`
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   display: inline-block;
   min-width: 180px;
   margin-top: 20px;
