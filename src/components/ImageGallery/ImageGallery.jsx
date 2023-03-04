@@ -43,7 +43,6 @@ export class ImageGallery extends Component {
         }
 
         this.setState({
-          status: Status.SUCCESS,
           isMore: data.hits.length === 12,
         });
 
@@ -60,6 +59,7 @@ export class ImageGallery extends Component {
         if (prevProps.query !== query) {
           toast.success(`We found ${data.totalHits} images`);
           this.setState({
+            status: Status.SUCCESS,
             images: [...images],
           });
         } else {
